@@ -10,7 +10,7 @@ function convertSeconds(seconds) {
     return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 }
 
-setInterval(() => {storage.write("/ext/4pinoutput.txt", towrite.join("\n");}, 30000)
+setInterval(() => {storage.write("/ext/4pinoutput.txt", towrite.join("\n")}, 30000)
 
 badusb.setup({ vid: 0xAAAA, pid: 0xBBBB, mfr_name: "Flipper", prod_name: "Zero", layout: "/ext/badusb/assets/layouts/en-US.kl" });
 
