@@ -1,6 +1,6 @@
 let badusb = require("badusb");
 let storage = require("storage");
-var towrite = []
+let towrite = []
 
 function convertSeconds(seconds) {
     const hours = Math.floor(seconds / 3600);
@@ -22,7 +22,7 @@ badusb.press("CTRL", "ALT", "c");
 delay(3000)
 
 for (let i = 0; i < 10000; i++) {
-  var h = `[${convertSeconds((i * 500)/100}]: tried code ${String(i).padStart(4, '0')}`
+  let h = `[${convertSeconds((i * 500)/100}]: tried code ${String(i).padStart(4, '0')}`
   towrite.push(h)
   console.log(h)
   badusb.println(String(i).padStart(4, '0'), 500);
