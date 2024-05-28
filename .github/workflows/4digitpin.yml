@@ -17,12 +17,12 @@ jobs:
       run: |
         for i in {0000..9999}
         do
-          echo "STRING $i" >> badusb_script.txt
-          echo "DELAY 200" >> badusb_script.txt
+          echo "STRING $i" >> 4pin_script.txt
+          echo "DELAY 200" >> 4pin_script.txt
         done
 
     - name: Upload BadUSB Script
       uses: actions/upload-artifact@v2
       with:
         name: badusb-script
-        path: badusb_script.txt
+        path: 4pin_script.txt
