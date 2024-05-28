@@ -15,12 +15,10 @@ jobs:
     - name: Generate BadUSB Script
       id: generate_script
       run: |
-        echo "DELAY 500" > badusb_script.txt
         for i in {0000..9999}
         do
           echo "STRING $i" >> badusb_script.txt
-          echo "ENTER" >> badusb_script.txt
-          echo "DELAY 500" >> badusb_script.txt
+          echo "DELAY 200" >> badusb_script.txt
         done
 
     - name: Upload BadUSB Script
